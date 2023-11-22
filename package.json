@@ -1,0 +1,45 @@
+{
+  "name": "@odx_comp/common",
+  "version": "1.0.2",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "echo \"cleaning...\" && npx shx --yes rm -rf build",
+    "build": "npm run clean && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pega/constellationjs": "SDK-8.8.3",
+    "@pega/cosmos-react-core": "^3.0.1",
+    "@pega/cosmos-react-work": "^3.0.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.13.1",
+    "react-i18next": "^13.2.2",
+    "react-router-dom": "^5.3.4"
+  },
+  "devDependencies": {
+    "@pega/configs": "^0.4.0",
+    "@pega/cspell-config": "^0.4.0",
+    "@pega/dx-component-builder-sdk": "~8.23.16",
+    "@pega/eslint-config": "^0.4.0",
+    "@pega/pcore-pconnect-typedefs": "0.0.6",
+    "@pega/prettier-config": "^0.4.0",
+    "@pega/stylelint-config": "^0.4.0",
+    "@pega/tsconfig": "^0.4.0",
+    "@pega/react-sdk-components": "file:pega-react-sdk-components-23.1.12.tgz",
+    "@pega/react-sdk-overrides": "file:pega-react-sdk-overrides-23.1.10.tgz",
+    "@types/prop-types": "^15.7.11",
+    "@types/react": "^18.2.38",
+    "@types/react-router-dom": "^5.3.3",
+    "cross-env": "^7.0.3",
+    "del-cli": "^5.1.0",
+    "prop-types": "^15.7.2",
+    "typescript": "^4.9.5"
+  }
+}

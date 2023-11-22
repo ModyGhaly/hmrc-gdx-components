@@ -7,6 +7,8 @@ import { DefaultFormContext, ReadOnlyDefaultFormContext }  from '../../../helper
 import ConditionalWrapper from '../../../helpers/formatters/ConditionalWrapper';
 import './DefaultForm.css';
 
+declare const PCore: any;
+
 export default function DefaultForm(props) {
   const { getPConnect, readOnly, additionalProps, configAlternateDesignSystem } = props;
 

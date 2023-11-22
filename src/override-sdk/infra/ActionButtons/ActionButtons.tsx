@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../../BaseComponents/Button/Button';
 
+declare const PCore: any;
+
 export default function ActionButtons(props) {
   const { arMainButtons, arSecondaryButtons, onButtonPress } = props;
   const localizedVal = PCore.getLocaleUtils().getLocaleValue;
@@ -12,12 +14,12 @@ export default function ActionButtons(props) {
 
   return (
     <>
-      <div className='govuk-button-group govuk-!-padding-top-4'>
-        {arMainButtons.map(mButton =>
-           mButton.name !== 'Hidden' ? (
+      <div className="govuk-button-group govuk-!-padding-top-4">
+        {arMainButtons.map((mButton) =>
+          mButton.name !== 'Hidden' ? (
             <Button
-              variant='primary'
-              onClick={e => {
+              variant="primary"
+              onClick={(e) => {
                 e.target.blur();
                 _onButtonPress(mButton.jsAction, 'primary');
               }}
@@ -28,13 +30,13 @@ export default function ActionButtons(props) {
             </Button>
           ) : null
         )}
-        {arSecondaryButtons.map(sButton =>
+        {arSecondaryButtons.map((sButton) =>
           sButton.actionID !== 'back' &&
           sButton.name !== 'Hidden' &&
           sButton.name.indexOf('Save') === -1 ? (
             <Button
-              variant='secondary'
-              onClick={e => {
+              variant="secondary"
+              onClick={(e) => {
                 e.target.blur();
                 _onButtonPress(sButton.jsAction, 'secondary');
               }}
@@ -47,23 +49,23 @@ export default function ActionButtons(props) {
         )}
       </div>
 
-        {arSecondaryButtons.map(sButton =>
-          sButton.actionID !== 'back' &&
-          sButton.name !== 'Hidden' &&
-          sButton.name.indexOf('Save') !== -1 ? (
-            <Button
-            variant='link'
-              onClick={e => {
-                e.target.blur();
-                _onButtonPress(sButton.jsAction, 'secondary');
-              }}
-              key={sButton.actionID}
-              attributes={{ type: 'link' }}
-            >{localizedVal(sButton.name, localeCategory)}</Button>
-          ) : null
-        )}
-
-
+      {arSecondaryButtons.map((sButton) =>
+        sButton.actionID !== 'back' &&
+        sButton.name !== 'Hidden' &&
+        sButton.name.indexOf('Save') !== -1 ? (
+          <Button
+            variant="link"
+            onClick={(e) => {
+              e.target.blur();
+              _onButtonPress(sButton.jsAction, 'secondary');
+            }}
+            key={sButton.actionID}
+            attributes={{ type: 'link' }}
+          >
+            {localizedVal(sButton.name, localeCategory)}
+          </Button>
+        ) : null
+      )}
     </>
   );
 }
@@ -77,6 +79,6 @@ ActionButtons.propTypes = {
 
 ActionButtons.defaultProps = {
   arMainButtons: [],
-  arSecondaryButtons: []
+  arSecondaryButtons: [],
   // buildName: null
 };

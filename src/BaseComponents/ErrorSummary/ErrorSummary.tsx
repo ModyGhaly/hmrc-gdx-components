@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+declare const PCore: any;
+
 export default function ErrorSummary(props) {
   const { errors } = props;
 
